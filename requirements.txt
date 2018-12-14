@@ -1,4 +1,3 @@
-setuptools
 scrapyd
 redis
 requests
