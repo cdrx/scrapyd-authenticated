@@ -4,7 +4,7 @@ FROM ubuntu:19.04
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-       python3 python3-pip \
+       python3 python3-pip python3-setuptools \
     && pip3 install chaperone \
     && mkdir /etc/chaperone.d
 
