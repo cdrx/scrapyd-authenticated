@@ -12,7 +12,7 @@ RUN set -x \
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-      python python-dev python-pip  python--setuptools \
+      python python-dev python-pip  python-setuptools \
       libssl-dev libxml2-dev libxslt-dev libffi-dev \
       build-essential
 
