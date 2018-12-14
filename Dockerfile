@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:17.04
 
 # install chaperone
 RUN set -x \
