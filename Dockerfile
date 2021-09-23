@@ -1,6 +1,6 @@
 # Scrapyd web service (with authentication)
 
-FROM ubuntu:18.04
+FROM python:3.7
 
 # install Ubuntu packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -34,6 +34,16 @@ ADD nginx.conf /etc/nginx/sites-enabled/default
 ADD scrapyd.conf /etc/scrapyd/scrapyd.conf
 
 # expose
+ADD .. /code
+RUN cd ./code && \
+    python3 setup.py bdist_egg && \
+    rm -rf /build /default.egg-info
+
+# expose
+EXPOSE 6800 6801
+ENTRYPOINT ["/usr/local/bin/chaperone"]
+
+
 VOLUME /scrapyd
 EXPOSE 6800
 

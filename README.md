@@ -1,10 +1,28 @@
-# Scrapyd (with authentication)
+# Scrapyd (with authentication & support of Asyncio Reactor based Spiders)
 
 Scrapyd is an application for deploying and running Scrapy spiders. It enables you to deploy (upload) your projects and control their spiders using a JSON API.
 
 Scrapyd doesn't include any provision for password protecting itself. This container packages Scrapyd with an nginx proxy in front of it providing basic HTTP authentication. The username and password are configured through environment variables.
 
 For more about Scrapyd, see the [Scrapyd documentation](http://scrapyd.readthedocs.org/en/latest/).
+
+
+# Using with docker-compose
+
+Run the following commands:
+
+```
+$ docker-compose build
+$ docker-compose up
+```
+
+To run the `async example spider`, run the following command on another terminal or on Postman: 
+```shell
+curl --location --request POST 'http://localhost:6801/schedule.json' --header 'Authorization: Basic ZGVidWc6ZGVidWc=' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'project=default' --data-urlencode 'spider=example'
+```
+
+Observe the new job schduled at `http://localhost:6801/jobs`.
+
 
 # How to use this image
 
