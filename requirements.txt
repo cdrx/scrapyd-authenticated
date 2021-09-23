@@ -1,6 +1,5 @@
 asyncio==3.4.3
 Scrapy==2.5.0
-scrapy==1.8.0
 scrapyd==1.2.1
 redis
 requests
