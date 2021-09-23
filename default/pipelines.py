@@ -12,7 +12,7 @@ class DefaultPipeline:
     async def process_item(self, item, spider):
         spider.logger.info("Running Asyncio Pipeline: Testing Sleep for 2 seconds")
         # testing with running asycio sleep
-        asyncio.run(self.test_sleep(2, spider))
+        await self.test_sleep(2, spider)
         spider.logger.info(f"Ending sleep with item: {item}")
         return item
 
