@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  scrapyd:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    environment:
+        USERNAME: "debug"
+        PASSWORD: "debug"
+
+    ports:
+      - "6801:6801"
