@@ -1,4 +1,4 @@
-scrapy==1.8.0
+scrapy==2.6.1
 scrapyd==1.2.1
 redis
 requests
